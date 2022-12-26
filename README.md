@@ -1,2 +1,3 @@
-# flask-learn
-Learning Flask.
+# Repo for learning Flask.
+
+They say it's better to start with Flask and then go to Django learning.

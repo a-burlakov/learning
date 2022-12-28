@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: 20px;
+    overflow: hidden;
+}
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+td:hover {
+ background: #ff8052
+}
+
+th:hover {
+    color: #ffffff;
+ background: #d84315
+}
+
+
+body{
+    font-family: 'Unbounded', cursive;
+}
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div>
-      <img src="https://source.unsplash.com/WLUHO9A_xik/600x300" alt="img">
-      <p class="title"><strong><span>Вулкан Бромо</span>, Индонезия</strong></p>
-      <p class="text">Действующий вулкан в Индонезии, входящий в
-          <b>вулканический комплекс Тенгер</b>. Расположен на востоке острова Ява. Имеет высоту
-          <i>2392</i> метра. Вулкан Бромо входит в состав национального парка Бромо-Тенгер-Семеру.</p>
-      <p><a href="https://en.wikipedia.org/wiki/Mount_Bromo">Подробнее</a> </p>
-  </div>
+<table>
+    <tr> <!-- первая строка, шапка таблицы -->
+        <th>Товар</th>  <!-- заголовок шапки -->
+        <th>Январь</th>
+        <th>Февраль</th>
+        <th>Март</th>
+    </tr>
+    <tr> <!-- вторая строка-->
+        <th>Персики</th>
+        <td>86</td>
+        <td>85</td>
+        <td>89</td>
+    </tr>
+    <tr> <!-- третья строка-->
+        <th>Яблоки</th>
+        <td>87</td>
+        <td>90</td>
+        <td>97</td>
+    </tr>
+    <tr> <!-- четвертая строка-->
+        <th>Бананы</th>
+        <td>57</td>
+        <td>53</td>
+        <td>55</td>
+    </tr>
+</table>
 </body>
 </html>
-
 
 
 

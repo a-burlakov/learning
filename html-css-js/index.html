@@ -4,70 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task</title>
-    <style>
-        table {
-    border-collapse: collapse;
-    border: 1px solid black;
-    font-size: 20px;
-    overflow: hidden;
-}
-th, td{
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    position: relative;
-}
-
-td:hover {
- background: #ff8052
-}
-
-th:hover {
-    color: #ffffff;
- background: #d84315
-}
-
-
-body{
-    font-family: 'Unbounded', cursive;
-}
-
-    </style>
+    <title>COFFEE HOUSE</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<table>
-    <tr> <!-- первая строка, шапка таблицы -->
-        <th>Товар</th>  <!-- заголовок шапки -->
-        <th>Январь</th>
-        <th>Февраль</th>
-        <th>Март</th>
-    </tr>
-    <tr> <!-- вторая строка-->
-        <th>Персики</th>
-        <td>86</td>
-        <td>85</td>
-        <td>89</td>
-    </tr>
-    <tr> <!-- третья строка-->
-        <th>Яблоки</th>
-        <td>87</td>
-        <td>90</td>
-        <td>97</td>
-    </tr>
-    <tr> <!-- четвертая строка-->
-        <th>Бананы</th>
-        <td>57</td>
-        <td>53</td>
-        <td>55</td>
-    </tr>
-</table>
+    <header class="header">
+        <div class="home" id="home">
+           <div class="home_image"><img  src="https://source.unsplash.com/vSuQJKZkt4U/1920x1080" alt=""></div> 
+            <h1>take your time</h1>
+            <div class="line"></div>
+        </div>
+        <div class="menu">
+            <a class="logo" href="http://index.html">coffee house</a>
+            <nav class="menu_nav">
+                <ul class="menu_ul">
+                    <li class="menu_li"><a href="#home">home</a> </li>
+                    <li class="menu_li"><a href="#story">story</a> </li>
+                    <li class="menu_li"><a href="#blog">blog</a> </li>
+                    <li class="menu_li"><a href="#contact">subscribe</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="story" id="story">
+            <div class="part_name"><h2>story</h2></div>
+            <div class="story_block">
+             <img class="story_image" src="https://source.unsplash.com/X4RJG4aNi8o/1920x1080" alt="">   
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, amet nesciunt nihil rerum commodi a laboriosam corporis itaque, est aperiam optio perferendis sed consequatur. Cupiditate natus libero impedit pariatur ex? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium perferendis tempore facere aliquid aliquam, aspernatur, quasi voluptatem iusto unde suscipit veniam est quas rerum laborum in quaerat quam quidem sequi.</p>
+            
+            </div>
+        </section>
+        <section class="blog" id="blog">
+            <div class="part_name"><h2>blog</h2></div>
+            <div class="blog_block">
+            <div class="news">
+                <h3><a href="#">Daily Coffee News</a></h3>
+                <img class="news_image" src="https://source.unsplash.com/TYIzeCiZ_60/1920x1080" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, deleniti fugiat aut porro facilis eum quisquam, pariatur delectus aliquid voluptatibus quaerat eius nemo recusandae tempora nostrum modi molestias. Minus, quaerat.</p>
+                
+            </div>
+            <div class="news">
+                <h3><a href="#">Dutch Coffee Chains</a></h3>
+                <img class="news_image" src="https://source.unsplash.com/CSQQ6_T0sks/1920x1080" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, deleniti fugiat aut porro facilis eum quisquam, pariatur delectus aliquid voluptatibus quaerat eius nemo recusandae tempora nostrum modi molestias. Minus, quaerat.</p>
+                
+            </div>
+            <div class="news">
+                <h3><a href="#">Start Up In Minneapolis</a></a></h3>
+                <img class="news_image" src="https://source.unsplash.com/9rTEwV_G0Do/1920x1080" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, deleniti fugiat aut porro facilis eum quisquam, pariatur delectus aliquid voluptatibus quaerat eius nemo recusandae tempora nostrum modi molestias. Minus, quaerat.</p>                
+            </div>  
+            </div>          
+        </section>
+        <div id="contact"> 
+            <h2 class="part_name">subscribe</h2>           
+            <form class="contact_form"> 
+                <input type="email" name="email" id="email" required placeholder=""> 
+                <label for="email">enter your email</label>     
+            </form>
+            <button type="submit" form="contact_form">submit</button>
+        </div>
+    </main>
+    <footer>        
+        <div><p>© copiright 2021</p></div>
+    </footer>
+    
 </body>
 </html>
-
-
-

@@ -1,23 +1,12 @@
 
-def codewars(dna):
-    complements = {
-        'A': 'T',
-        'T': 'A',
-        'C': 'G',
-        'G': 'C'
-    }
+def codewars(a, b):
+    if a > b:
+        a, b = b, a
 
-    other_side = ''
-    for symbol in dna:
-        if symbol in complements:
-            other_side += complements[symbol]
-        else:
-            other_side += symbol
-
-    return other_side
+    return sum([x for x in range(a, b + 1)])
 
 
-result = codewars('TAACG')
+result = codewars(0, -1)
 
 print(result)
 

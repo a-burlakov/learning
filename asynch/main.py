@@ -1,4 +1,4 @@
-import threading
+import multiprocessing
 import time
 import random
 
@@ -7,16 +7,18 @@ def worker(number):
     time.sleep(sleep)
     print(f"Я работник {str(number)}, я спал {sleep} секунд!")
 
-for i in range(5):
-    t = threading.Thread(target=worker, args=(i,))
-    t.start()
 
-print("Ну вот и все, ждем наши треды!")
+if __name__ == '__main__':
 
-main_thread = threading.main_thread()
-for t in threading.enumerate():
-    if t is main_thread:
-        continue
-    t.join()
+    procs = []
+    for i in range(5):
+        proc = multiprocessing.Process(target=worker, args=(i,))
+        proc.start()
+        procs.append(proc)
 
-print('Все кончилось')
+    print("Ну вот и все, ждем наши процессы!")
+
+    for proc in procs:
+        proc.join()
+
+    print('Все кончилось')

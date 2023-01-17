@@ -1,18 +1,19 @@
 
-def codewars(string):
+def codewars(url):
 
-    string = string.lower()
+    separators = ['http://', 'https://', 'www.']
 
-    mexican_wave = []
-    for i, symbol in enumerate(string):
+    for sep in separators:
+        if sep in url:
+            url = url.split(sep)[1]
 
-        if not symbol.isalpha():
-            continue
+    if '.' in url:
+        url = url.split('.')[0]
 
-        mexican_symbols = [chr(ord(s) - 32) if i == j else s for j, s in enumerate(string)]
-        mexican_word = ''.join(mexican_symbols)
-        mexican_wave.append(mexican_word)
+    return url
 
-    return mexican_wave
-
-result = codewars('h ello')
+print('haha/f/haha'.split('//'))
+result = codewars('http://google.com')
+print(result)
+result = codewars('http://www.zombie-bites.com')
+print(result)

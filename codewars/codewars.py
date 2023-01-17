@@ -1,3 +1,4 @@
+import os
 
 def codewars(url):
 
@@ -12,8 +13,4 @@ def codewars(url):
 
     return url
 
-print('haha/f/haha'.split('//'))
-result = codewars('http://google.com')
-print(result)
-result = codewars('http://www.zombie-bites.com')
-print(result)
+print(os.path.exists('tesxt/main.py'))

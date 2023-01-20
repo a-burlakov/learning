@@ -1,17 +1,29 @@
 
-def codewars(core_number: int) -> list:
-    core_sum = sum(range(1, core_number + 1))
+def codewars(dice: list[int]) -> int:
 
-    fit_pairs = []
-    for i in range(1, core_number + 1):
+    numbers_line = ''.join([str(x) for x in sorted(dice)])
 
-        j = (core_sum - i) // i
+    points_table = {
+        '111': 1000,
+        '666': 600,
+        '555': 500,
+        '444': 400,
+        '333': 300,
+        '222': 200,
+        '5': 50,
+        '1': 100,
+    }
 
-        if j * i == (core_sum - j - i):
-            fit_pairs.append((j, i))
-            fit_pairs.append((i, j))
+    points = 0
+    for sequence, points_for_sequence in points_table.items():
 
-    return sorted(fit_pairs, key=lambda x: x[0])
+        while sequence in numbers_line:
+            numbers_line = numbers_line.replace(sequence, '', 1)
+            points += points_for_sequence
+
+    return points
 
 
-print(codewars(26))
+print(codewars([2, 3, 4, 6, 2]))
+print(codewars([4, 4, 4, 3, 3]))
+print(codewars([2, 4, 4, 5, 4]))

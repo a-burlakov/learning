@@ -1,5 +1,3 @@
-import os
-
 
 def codewars(number_list: list[int]) -> int:
     """

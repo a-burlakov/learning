@@ -1,16 +1,25 @@
 import os
 
-def codewars(url):
 
-    separators = ['http://', 'https://', 'www.']
+def codewars(number_list: list[int]) -> int:
+    """
+    Returns second after max number from the list.
 
-    for sep in separators:
-        if sep in url:
-            url = url.split(sep)[1]
+    :param number_list: list with numbers.
+    :return: number that is second after max number in the list.
+    """
+    max_number = 0
+    second_after_max_number = 0
+    for number in number_list:
+        if max_number < number:
+            second_after_max_number = max_number
+            max_number = number
+        elif second_after_max_number < number:
+            second_after_max_number = number
 
-    if '.' in url:
-        url = url.split('.')[0]
+    return second_after_max_number
 
-    return url
 
-print(os.path.exists('tesxt/main.py'))
+print(codewars([1, 4, 2, 6, 5]))
+print(codewars([5, 3, 1, 2, 4]))
+print(codewars([1, 2, 3, 4, 5]))

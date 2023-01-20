@@ -1,39 +1,29 @@
 import itertools
 
 
-def codewars(observed: str) -> list[str]:
-    # ┌───┬───┬───┐
-    # │ 1 │ 2 │ 3 │
-    # ├───┼───┼───┤
-    # │ 4 │ 5 │ 6 │
-    # ├───┼───┼───┤
-    # │ 7 │ 8 │ 9 │
-    # └───┼───┼───┘
-    #     │ 0 │
-    #     └───┘
+def codewars(message: str) -> str:
 
-    adjacents = {
-        '1': ['2', '4', '1'],
-        '2': ['1', '3', '5', '2'],
-        '3': ['2', '6', '3'],
-        '4': ['1', '5', '7', '4'],
-        '5': ['2', '4', '6', '8', '5'],
-        '6': ['3', '5', '9', '6'],
-        '7': ['4', '8', '7'],
-        '8': ['5', '7', '9', '0', '8'],
-        '9': ['6', '8', '9'],
-        '0': ['8', '0'],
-    }
+    cipher = ''
+    lower_start = ord('a')
+    lower_end = ord('z')
+    upper_start = ord('A')
+    upper_end = ord('Z')
+    for symbol in message:
 
-    lists = []
-    for symb in observed:
-        lists.append(adjacents[symb])
+        if not symbol.isalpha():
+            cipher += symbol
+            continue
 
-    pin_list = []
-    for pin in itertools.product(*lists):
-        pin_list.append(''.join(pin))
+        symbol_code = ord(symbol)
 
-    return pin_list
+        if symbol.islower() and symbol_code + 13 > lower_end:
+            new_symbol = chr(lower_start + (13 - lower_end + symbol_code) - 1)
+        elif symbol.isupper() and symbol_code + 13 > upper_end:
+            new_symbol = chr(upper_start + (13 - upper_end + symbol_code) - 1)
+        else:
+            new_symbol = chr(symbol_code + 13)
 
+        cipher += new_symbol
 
-print(codewars('11'))
+    return cipher
+

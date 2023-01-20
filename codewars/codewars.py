@@ -1,29 +1,15 @@
+def codewars(int32: int) -> str:
+    bin_line = format(int32, 'b')
+    if len(bin_line) < 32:
+        bin_line = '0' * (32 - len(bin_line)) + bin_line
 
-def codewars(dice: list[int]) -> int:
+    ip_octets = []
+    for i in range(4):
+        ip_octets.append(bin_line[i * 8:(i + 1) * 8])
 
-    numbers_line = ''.join([str(x) for x in sorted(dice)])
-
-    points_table = {
-        '111': 1000,
-        '666': 600,
-        '555': 500,
-        '444': 400,
-        '333': 300,
-        '222': 200,
-        '5': 50,
-        '1': 100,
-    }
-
-    points = 0
-    for sequence, points_for_sequence in points_table.items():
-
-        while sequence in numbers_line:
-            numbers_line = numbers_line.replace(sequence, '', 1)
-            points += points_for_sequence
-
-    return points
+    return '.'.join([str(int(ip, 2)) for ip in ip_octets])
 
 
-print(codewars([2, 3, 4, 6, 2]))
-print(codewars([4, 4, 4, 3, 3]))
-print(codewars([2, 4, 4, 5, 4]))
+print(codewars(2149583361))
+print(codewars(32))
+print(codewars(0))

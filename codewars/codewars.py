@@ -1,37 +1,36 @@
+def codewars(triplets: [list[list[str]]]) -> str:
 
-def codewars(number: int, awesome_phrases: list[int]) -> int:
-    for number_to_check, points in {number: 2, number + 1: 1,
-                                    number + 2: 1}.items():
+    secret_word = ''
+    while any(x for x in triplets):
 
-        if number_to_check < 100:
-            continue
+        first_letters = [x[0] for x in triplets if x]
+        for first_letter in first_letters:
 
-        # Any digit followed by all zeros: 100, 90000
-        if len(str(number_to_check)) - len(
-                str(number_to_check).rstrip('0')) > 1:
-            return points
+            is_first_letter_ever = True
 
-        # Every digit is the same number: 1111
-        if len(set(str(number_to_check))) == 1:
-            return points
+            for triplet in triplets:
+                if first_letter in triplet and triplet.index(first_letter) > 0:
+                    is_first_letter_ever = False
+                    break
 
-        # The digits are sequential, incementing†: 1234
-        if str(number_to_check) in '1234567890':
-            return points
+            if is_first_letter_ever:
+                secret_word += first_letter
+                for triplet in triplets:
+                    if first_letter in triplet:
+                        triplet.remove(first_letter)
+                break
 
-        # The digits are sequential, decrementing‡: 4321
-        if str(number_to_check) in '9876543210':
-            return points
-
-        # The digits are a palindrome: 1221 or 73837
-        if str(number_to_check) == str(number_to_check)[::-1]:
-            return points
-
-        # The digits match one of the values in the awesome_phrases array
-        if number_to_check in awesome_phrases:
-            return points
-
-    return 0
+    return secret_word
 
 
-print(codewars(98, [1337, 256]))
+triplets = [
+    ['t', 'u', 'p'],
+    ['w', 'h', 'i'],
+    ['t', 's', 'u'],
+    ['a', 't', 's'],
+    ['h', 'a', 'p'],
+    ['t', 'i', 's'],
+    ['w', 'h', 's']
+]
+
+print(codewars(triplets))

@@ -1,11 +1,10 @@
-def codewars(a: list[int], b: list[int]) -> list:
 
-    for number_to_delete in b:
+def codewars(string):
 
-        while number_to_delete in a:
-            a.remove(number_to_delete)
+    if not string:
+        return True
 
-    return a
+    return all([string.lower().count(x.lower()) == 1 for x in string])
 
 
-print(codewars([1,2,2], []))
+print(codewars("mOose"))

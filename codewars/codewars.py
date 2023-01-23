@@ -1,5 +1,5 @@
 def codewars(s):
-    return s.count('o') == s.count('x')
+    return '-'.join(''.join([x for _ in range(i+1)]).title() for i, x in enumerate(s))
 
 
-print(codewars('xxxoo'))
+print(codewars('RqaEzty'))

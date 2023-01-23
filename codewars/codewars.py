@@ -1,12 +1,11 @@
-from functools import reduce
+from collections import defaultdict
 
 def codewars(n):
 
-    count = 0
-    while len(str(n)) > 1:
-        n = reduce(lambda i, j: i*j, [int(x) for x in str(n)])
-        count += 1
+    count_dict = defaultdict(int)
+    for number in n:
+        count_dict[number] += 1
 
-    return count
+    return [k for k, v in count_dict.items() if v == 1][0]
 
-print(codewars(999))
+print(codewars([ 0, 0, 0.55, 0, 0 ]))

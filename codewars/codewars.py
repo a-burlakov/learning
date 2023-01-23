@@ -1,5 +1,5 @@
-def codewars(boolean):
-    return "Yes" if boolean else "No"
+def codewars(s):
+    return s.count('o') == s.count('x')
 
 
-print(codewars(True))
+print(codewars('xxxoo'))

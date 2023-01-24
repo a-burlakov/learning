@@ -1,5 +1,8 @@
-def codewars(sentence: str):
+def codewars(s: str):
 
-    return ' '.join(sorted(sentence.split(), key=lambda x: [n for n in x if n.isdigit()]))
+    if len(s) % 2 == 0:
+        return s[len(s) // 2 - 1:len(s) // 2 + 1]
+    else:
+        return s[len(s) // 2:len(s) // 2 + 1]
 
 print(codewars('4of Fo1r pe6ople g3ood th5e the2'))

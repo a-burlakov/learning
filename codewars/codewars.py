@@ -1,7 +1,5 @@
-def codewars(walk: list):
-    return (len(walk) == 10
-            and walk.count('s') == walk.count('n')
-            and walk.count('e') == walk.count('w'))
+def codewars(sentence: str):
 
+    return ' '.join(sorted(sentence.split(), key=lambda x: [n for n in x if n.isdigit()]))
 
-print(codewars(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']))
+print(codewars('4of Fo1r pe6ople g3ood th5e the2'))

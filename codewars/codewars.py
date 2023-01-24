@@ -1,8 +1,5 @@
-def codewars(s: str):
+def codewars(l: list):
 
-    if len(s) % 2 == 0:
-        return s[len(s) // 2 - 1:len(s) // 2 + 1]
-    else:
-        return s[len(s) // 2:len(s) // 2 + 1]
+    return int(''.join([str(int(x) ** 2) for x in str(num)]))
 
-print(codewars('4of Fo1r pe6ople g3ood th5e the2'))
+print(codewars([1, 2, 'a', 'b']))

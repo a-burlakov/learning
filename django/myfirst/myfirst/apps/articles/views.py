@@ -22,7 +22,7 @@ def detail(request, article_id:int):
         raise Http404("Статья не найдена!")
 
     latest_comments = a.comment_set
-
+    print(latest_comments)
     return render(request, 'articles/detail.html', {'article': a, 'comments': latest_comments})
 
 

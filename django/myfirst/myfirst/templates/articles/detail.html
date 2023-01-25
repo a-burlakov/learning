@@ -25,7 +25,7 @@
         Комментов нет, увы!
     {% endif %}
 
-    <form action="{% url 'articles:leave_comment' article.id %}" method="post">
+    <form action="{% url 'articles:leave_comment' article.id %}" method="POST">
 
         {% csrf_token %}
 

@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/django1hour" />
       <excludeFolder url="file://$MODULE_DIR$/django" />
+      <excludeFolder url="file://$MODULE_DIR$/venvs/django_venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (learning)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,4 +1,30 @@
-def next_smaller(n):
-    return mpg * fuel_left  - distance_to_pump >= 0
+from collections import deque
 
-print(next_smaller(2071))
+class Node:
+    def __init__(self, L, R, n):
+        self.left: Node = L
+        self.right: Node = R
+        self.value: int = n
+
+
+def codewars(node):
+
+    if node is None:
+        return []
+
+    queue = [node]
+    result_list = []
+    while queue:
+        current_node = queue.pop()
+        if current_node is not None:
+            result_list.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+
+    return result_list
+
+
+result = codewars(Node(Node(None, Node(None, None, 4), 2), Node(Node(None, None, 5), Node(None, None, 6), 3), 1))
+print(result)

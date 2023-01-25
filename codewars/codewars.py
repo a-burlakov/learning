@@ -1,30 +1,14 @@
-from collections import deque
+from collections import Counter
 
 
-class Node:
-    def __init__(self, L, R, n):
-        self.left: Node = L
-        self.right: Node = R
-        self.value: int = n
+def codewars(text):
+    text = ''.join([s if s.isalpha() or s == "'" else ' ' for s in text])
+    words = ''.join([s for s in text.lower() if s.isalpha() or s in " '"]).split()
+    words = filter(lambda word: not all([x == "'" for x in word]), words)
+    return [s for s, a in Counter(words).most_common(3)]
 
 
-def codewars(node):
-    if node is None:
-        return []
-
-    queue = [node]
-    result_list = []
-    while queue:
-        current_node = queue.pop()
-        if current_node is not None:
-            result_list.append(current_node.value)
-            if current_node.right is not None:
-                queue.append(current_node.right)
-            if current_node.left is not None:
-                queue.append(current_node.left)
-    return result_list
-
-
-result = codewars(Node(Node(None, Node(None, None, 4), 2),
-                       Node(Node(None, None, 5), Node(None, None, 6), 3), 1))
+result = codewars("AGU:/AGU?:!AGU_!/.;AGU::/ ;AGU;AGU:-;-:AGU. :AGU.__?,AGU;:_-AGU!: AGU;??AGU/.:!AGU.AGU .AGU/_/,:")
+print(result)
+result = codewars("  '''  ")
 print(result)

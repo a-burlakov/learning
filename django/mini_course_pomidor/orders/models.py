@@ -1,6 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import User
-from products.models import Product, ProductType
+from django.db import models
+
+from products.models import Product
 
 
 class SalesOrder(models.Model):

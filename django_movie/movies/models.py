@@ -1,5 +1,5 @@
 from datetime import date
-
+from django.urls import reverse
 from django.db import models
 
 
@@ -88,6 +88,10 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    def get_absolute_url(self):
+        return reverse("movie_detail", kwargs={"slug": self.url})
 
     class Meta:
         verbose_name = 'Фильм'
